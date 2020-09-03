@@ -39,3 +39,51 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+
+
+.paper-abstract {
+    opacity: 0;
+    max-height: 0;
+    font-size: 75%;
+    text-align: justify;
+    transition: .25s ease;
+    display: none;
+}
+
+.open-abstract {
+  display: none;
+}
+
+.open-abstract:checked ~ .paper-abstract {
+  opacity: 1;
+//   font-size: inherit;
+  max-height: 999em;
+  display: inherit;
+}
+
+// .open-abstract ~ .paper-abstract-trigger:before {
+//   content: 'Read abstract...';
+// }
+
+// .open-abstract:checked ~ .paper-abstract-trigger:before {
+//   content: 'Close abstract...';
+// }
+
+.paper-abstract-trigger {
+  cursor: pointer;
+  padding: 1em .5em;
+  color: #0085bd;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #0085bd;
+  border-radius: .25em;
+  font-weight: 500;
+  display: grid;
+  text-align: center;
+}
+
+.paper-abstract-trigger:hover{
+    // color: lightseagreen;
+    background-color: lightseagreen;
+}

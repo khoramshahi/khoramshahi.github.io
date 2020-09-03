@@ -1,0 +1,35 @@
+{% include base_path %}
+
+
+
+
+<div>
+    {{post.title}}
+
+{{post.authors}}
+
+{{post.venue}}
+
+{{post.year}}
+<br>
+page: {{page.url}}
+<br>
+
+post: {{post.url}}
+<br>
+
+</div>
+
+<div>
+    <input type="checkbox" class="open-abstract" id="{{post.url}}"/>
+    <label for="{{post.url}}" class="paper-abstract-trigger"><i class="fa fa-file-alt"></i></label> 
+
+    <div class="paper-abstract">
+        {{ post.content }}
+    </div>
+</div>
+
+
+
+
+
