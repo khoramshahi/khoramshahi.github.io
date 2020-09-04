@@ -42,48 +42,251 @@
 
 
 
-.paper-abstract {
-    opacity: 0;
-    max-height: 0;
+// .paper-abstract {
+//     opacity: 0;
+//     max-height: 0;
+//     font-size: 75%;
+//     text-align: justify;
+//     transition: .25s ease;
+//     display: none;
+// }
+
+// .open-abstract {
+//   display: none;
+// }
+
+// .open-abstract:checked ~ .paper-abstract {
+//   opacity: 1;
+// //   font-size: inherit;
+//   max-height: 999em;
+//   display: inherit;
+// }
+
+// // .open-abstract ~ .paper-abstract-trigger:before {
+// //   content: 'Read abstract...';
+// // }
+
+// // .open-abstract:checked ~ .paper-abstract-trigger:before {
+// //   content: 'Close abstract...';
+// // }
+
+// .paper-abstract-trigger {
+//   cursor: pointer;
+//   padding: 1em .5em;
+//   color: #0085bd;
+//   font-size: .9em;
+//   line-height: 2;
+//   border: 1px solid #0085bd;
+//   border-radius: .25em;
+//   font-weight: 500;
+//   display: grid;
+//   text-align: center;
+// }
+
+// .paper-abstract-trigger:hover{
+//     // color: lightseagreen;
+//     background-color: lightseagreen;
+// }
+
+
+// .btn-container .paper-button {
+//   background-color: #4CAF50; /* Green */
+//   border: none;
+//   color: white;
+//   padding: 15px 32px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+//   font-size: 16px;
+//   cursor: pointer;
+//   float: left;
+// }
+
+// .btn-container .paper-button:hover {
+//   background-color: #3e8e41;
+// }
+
+
+
+
+
+
+// ===============================================================
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  // grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 1px 1px;
+  grid-template-areas:
+    "paper-title"
+    "paper-authors"
+    "paper-journal"
+    "menu-container"
+    "paper-abstract";
+}
+
+.paper-title { grid-area: paper-title; }
+
+.paper-authors { grid-area: paper-authors; }
+
+.paper-journal { grid-area: paper-journal; }
+
+.menu-container {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 1fr;
+  grid-auto-rows: auto;
+  grid-auto-columns: minmax(auto, 0.35fr);
+  float: right;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". button-container";
+  grid-area: menu-container;
+}
+
+.button-container {
+  display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 1fr;
+  grid-auto-columns: minmax(auto, 0.08fr);
+  float: right;
+  gap: 0px 0px;
+  grid-template-areas:
+    "button-container-abs button-container-pdf button-container-bib button-container-ext";
+  grid-area: button-container;
+  position: relative; // needed for floating tooltip
+
+}
+
+.button-container-abs { 
+  grid-area: button-container-abs; 
+  width:fit-content; 
+  height:fit-content;
+  float: left;
+ 
+}
+
+.button-container-pdf { 
+  grid-area: button-container-pdf; 
+  width:fit-content; 
+  height:fit-content; 
+  float: left;
+
+}
+
+.button-container-bib { 
+  grid-area: button-container-bib; 
+  width:fit-content; 
+  height:fit-content; 
+  float: left;
+
+}
+
+.button-container-ext { 
+  grid-area: button-container-ext; 
+  width:fit-content; 
+  height:fit-content; 
+  float: left;
+
+}
+
+.paper-abstract { 
+  grid-area: paper-abstract;
+    // max-height: 0;
     font-size: 75%;
     text-align: justify;
     transition: .25s ease;
-    display: none;
+  }
+
+
+.paper-button{
+  font-size: 26px;
+  opacity: 0.65;
+  border: none;
+  border-radius: 1px;
+
 }
 
-.open-abstract {
-  display: none;
-}
-
-.open-abstract:checked ~ .paper-abstract {
+.paper-button:hover{
+  font-size: 26px;
   opacity: 1;
-//   font-size: inherit;
-  max-height: 999em;
-  display: inherit;
+  background-color: lightgray;
+  border: none;
 }
 
-// .open-abstract ~ .paper-abstract-trigger:before {
-//   content: 'Read abstract...';
-// }
 
-// .open-abstract:checked ~ .paper-abstract-trigger:before {
-//   content: 'Close abstract...';
-// }
+.paper-button:focus {
+  outline: 0 !important;
+}
 
-.paper-abstract-trigger {
-  cursor: pointer;
-  padding: 1em .5em;
-  color: #0085bd;
-  font-size: .9em;
-  line-height: 2;
-  border: 1px solid #0085bd;
-  border-radius: .25em;
-  font-weight: 500;
-  display: grid;
+
+.linkLikeButton {
+  font-size: 26px;
+  opacity: 0.65;
+  border: none;
+  border-radius: 1px;
+
+  background-color: white;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+
+    
+
+  }
+
+.linkLikeButton:hover {
+  font-size: 26px;
+  opacity: 1;
+  background-color: lightgray;
+  border: none;
+  }
+  
+.bib-copied{
+  color: darkgreen;
+} 
+
+
+
+
+
+
+
+
+
+.button-container-bib .bibTooltiptext {
+  visibility: hidden;
+  font-size: small;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
   text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-.paper-abstract-trigger:hover{
-    // color: lightseagreen;
-    background-color: lightseagreen;
+// .tooltip .tooltiptext::after {
+//   content: "";
+//   position: absolute;
+//   top: 100%;
+//   left: 50%;
+//   margin-left: -5px;
+//   border-width: 5px;
+//   border-style: solid;
+//   border-color: #555 transparent transparent transparent;
+// }
+
+.button-container-bib:hover .bibTooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
+

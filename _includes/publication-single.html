@@ -3,31 +3,51 @@
 
 
 
-<div>
-    {{post.title}}
 
-{{post.authors}}
+<div class="grid-container">
+    <div class="paper-title">{{post.title}}</div>
+    <div class="paper-authors">{{post.authors}}</div>
+    <div class="paper-journal">{{post.venue}}</div>
+    <div class="menu-container">
+      <div class="button-container">
 
-{{post.venue}}
+        <!-- handling the abstract  -->
+        <div class="button-container-abs">
+            <button class="paper-button">
+                <i class="fa fa-file-alt"></i>
+            </button>
+        </div>
 
-{{post.year}}
-<br>
-page: {{page.url}}
-<br>
+        <!-- handling pdf  -->
+        <div class="button-container-pdf">
+            <button class="paper-button">
+                <i class="fa fa-file-pdf"></i>
+            </button>
+        </div>
+        
+        
+        <!-- handling external link -->
+        <div class="button-container-bib" title="Biblopgraphy">
+            <button class="paper-button copy-bib-button">
+                    <!-- It seems the icon gets clicked not the button, so data-bibfile is assigned to the icon -->
+                <i class="fa fa-book" data-bibfile="{{post.citation}}" data-post-url="{{post.url}}" ></i>
+                <span class="bibTooltiptext" id="bibTooltip-{{post.url}}">Copy to clipboard</span>
+            </button>
+        </div>
+        
+        
+        <!-- handling external link -->
+        <div class="button-container-ext">
+            <a class="linkLikeButton" title="External link" href="{{post.external_link}}">
+                <i class="fa fa-external-link-square-alt"></i>
+            </a>
+        </div>
 
-post: {{post.url}}
-<br>
-
-</div>
-
-<div>
-    <input type="checkbox" class="open-abstract" id="{{post.url}}"/>
-    <label for="{{post.url}}" class="paper-abstract-trigger"><i class="fa fa-file-alt"></i></label> 
-
-    <div class="paper-abstract">
-        {{ post.content }}
+      </div>
     </div>
-</div>
+    <div class="paper-abstract">{{ post.content }}</div>
+  </div>
+
 
 
 
