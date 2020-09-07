@@ -6,7 +6,7 @@ permalink: /publication/human-guidance
 year: 2020
 venue: 'Autonomous robots'
 external_link: "https://link.springer.com/article/10.1007/s10514-020-09934-9"
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
+paperurl: '../files/2020-human-guidance.pdf'
 citation: "../files/2020-human-guidance.bib"
 ---
 

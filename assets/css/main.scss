@@ -198,6 +198,7 @@
     font-size: 75%;
     text-align: justify;
     transition: .25s ease;
+    display: none;
   }
 
 
@@ -206,6 +207,7 @@
   opacity: 0.65;
   border: none;
   border-radius: 1px;
+  padding: 5px;
 
 }
 
@@ -230,8 +232,8 @@
 
   background-color: white;
   color: black;
-  padding: 5px;
-  text-decoration: none;
+  // padding: 5px;
+  // text-decoration: none;
 
     
 
@@ -243,8 +245,24 @@
   background-color: lightgray;
   border: none;
   }
+
+.button-container-ext:hover .linkLikeButton {
+  font-size: 26px;
+  opacity: 1;
+  background-color: lightgray;
+  border: none;
+  }
+
+  .button-container-ext:hover {
+    background-color: lightgray;
+    }
+
   
 .bib-copied{
+  color: darkgreen;
+} 
+
+.abstract-opened{
   color: darkgreen;
 } 
 
@@ -274,6 +292,62 @@
   transition: opacity 0.3s;
 }
 
+.button-container-pdf .bibTooltiptext {
+  visibility: hidden;
+  font-size: small;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.button-container-abs .bibTooltiptext {
+  visibility: hidden;
+  font-size: small;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.button-container-ext .bibTooltiptext {
+  visibility: hidden;
+  font-size: small;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
 // .tooltip .tooltiptext::after {
 //   content: "";
 //   position: absolute;
@@ -288,5 +362,35 @@
 .button-container-bib:hover .bibTooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.button-container-pdf:hover .bibTooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button-container-abs:hover .bibTooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.button-container-ext:hover .bibTooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+.fa-stack { 
+  font-size: 0.5em; 
+  height: 2.25em;
+}
+
+
+.fa-link-small{
+  font-size: 0.95em;
+  top: 0.1em;
+  transform: rotate(90deg);
 }
 

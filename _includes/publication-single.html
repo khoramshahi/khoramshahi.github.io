@@ -9,47 +9,48 @@
     <div class="paper-authors">{{post.authors}}</div>
     <div class="paper-journal">{{post.venue}}</div>
     <div class="menu-container">
-      <div class="button-container">
+        <div class="button-container">
 
-        <!-- handling the abstract  -->
-        <div class="button-container-abs">
-            <button class="paper-button">
-                <i class="fa fa-file-alt"></i>
-            </button>
-        </div>
+            <!-- handling the abstract  -->
+            <div class="button-container-abs">
+                <button class="paper-button open-abstract-button">
+                    <i class="fa fa-file-alt" data-post-url="{{post.url}}"></i>
+                    <span class="bibTooltiptext" id="absTooltip-{{post.url}}">Read abstract</span>
+                </button>
+            </div>
 
-        <!-- handling pdf  -->
-        <div class="button-container-pdf">
-            <button class="paper-button">
-                <i class="fa fa-file-pdf"></i>
-            </button>
-        </div>
-        
-        
-        <!-- handling external link -->
-        <div class="button-container-bib" title="Biblopgraphy">
-            <button class="paper-button copy-bib-button">
+            <!-- handling pdf  -->
+            <div class="button-container-pdf">
+                <a class="linkLikeButton" href="{{post.paperurl}}">
+                    <span class="bibTooltiptext">Open pdf</span>
+                    <i class="fa fa-file-pdf"></i>
+                </a>
+            </div>
+
+
+            <!-- handling external link -->
+            <div class="button-container-bib">
+                <button class="paper-button copy-bib-button">
                     <!-- It seems the icon gets clicked not the button, so data-bibfile is assigned to the icon -->
-                <i class="fa fa-book" data-bibfile="{{post.citation}}" data-post-url="{{post.url}}" ></i>
-                <span class="bibTooltiptext" id="bibTooltip-{{post.url}}">Copy to clipboard</span>
-            </button>
-        </div>
-        
-        
-        <!-- handling external link -->
-        <div class="button-container-ext">
-            <a class="linkLikeButton" title="External link" href="{{post.external_link}}">
-                <i class="fa fa-external-link-square-alt"></i>
-            </a>
-        </div>
+                    <i class="fa fa-file-medical" data-bibfile="{{post.citation}}" data-post-url="{{post.url}}"></i>
+                    <span class="bibTooltiptext" id="bibTooltip-{{post.url}}">Copy bib</span>
+                </button>
+            </div>
 
-      </div>
+
+            <!-- handling external link -->
+            <div class="button-container-ext">
+                <a class="linkLikeButton" href="{{post.external_link}}">
+                    <span class="bibTooltiptext">External link</span>
+
+                    <span class="fa-stack">
+                        <i class="fa fa-file fa-stack-2x"></i>
+                        <i class="fa fa-link fa-stack-1x fa-inverse fa-link-small"></i>
+                    </span>
+                </a>
+            </div>
+
+        </div>
     </div>
-    <div class="paper-abstract">{{ post.content }}</div>
-  </div>
-
-
-
-
-
-
+    <div class="paper-abstract" id="abstract-{{post.url}}">{{ post.content }}</div>
+</div>

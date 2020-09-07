@@ -7,7 +7,7 @@ console.log('running this code')
 
 
 const copyBib = (clickEvent) => {
-    console.log('button pressed')
+    // console.log('button pressed')
     const clickedButton = clickEvent.target;
     if (clickedButton.hasAttribute('data-bibfile')) { 
 
@@ -59,7 +59,55 @@ const copyBib = (clickEvent) => {
     // console.log(tempTextArea.textContent);
 };
 
+
+
+
+
+const openAbstract = (clickEvent) => {
+    // console.log('button pressed')
+    const clickedButton = clickEvent.target;
+    if (clickedButton.hasAttribute('data-post-url')) { 
+
+
+        console.log("need to open abstract for " +  clickedButton.getAttribute('data-post-url'))
+
+        var abstract_div = document.getElementById("abstract-"+clickedButton.getAttribute('data-post-url'));
+        var tooltip = document.getElementById("absTooltip-"+clickedButton.getAttribute('data-post-url'));
+
+        // console.log(abstract_div.style.display)
+        // abstract_div.style.display = (abstract_div.style.display == 'block') ? 'none' : 'block';
+        // console.log(abstract_div.style.display)
+
+
+        if(abstract_div.style.display == 'block') {
+            abstract_div.style.display = 'none'
+            clickedButton.classList.remove('abstract-opened');
+            tooltip.innerHTML = "Read abstract";
+        }
+        else{
+            abstract_div.style.display = 'block'
+            clickedButton.classList.add('abstract-opened');
+            tooltip.innerHTML = "Close abstract";
+
+        }
+
+    }
+
+
+    // tempTextArea.textContent = clickedButton.getAttribute('data-bibfile');
+    // console.log(tempTextArea.textContent);
+};
+
+
+
+
+
+
+
 document.querySelectorAll('.copy-bib-button').forEach((copyBibButton) => {
     copyBibButton.addEventListener('click', copyBib);
-    console.log('found some button')
+});
+
+document.querySelectorAll('.open-abstract-button').forEach((copyBibButton) => {
+    copyBibButton.addEventListener('click', openAbstract);
 });
