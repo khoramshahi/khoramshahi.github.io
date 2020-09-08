@@ -1,21 +1,18 @@
 ---
 title: "Arm-hand motion-force coordination for physical interactions with non-flat surfaces using dynamical systems: Toward compliant robotic massage"
-authors: Khoramshahi, Mahdi and Henriks, Gustav and Naef, Aileen and Salehian, Seyed Sina Mirrazavi and Kim, Joonyoung and Billard, Aude
+authors: M Khoramshahi, G Henriks, A Naef, S Mirrazavi, J Kim, A Billard
 collection: publications
-permalink: /publication/2020-icra
+permalink: /publication/2020-ICRA-ArmHand
 year: 2020
 venue: 'ICRA'
-external_link: "google.com"
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: "../files/2020-ICRA-massage.bib"
+external_link: "https://infoscience.epfl.ch/record/275586"
+paperurl: "../files/2020-ICRA-ArmHand.pdf"
+citation: "../files/2020-ICRA-ArmHand.bib"
 ---
 
-Some abstract here Some abstract here
-Some abstract here
-Some abstract here
-Some abstract here
-Some abstract here
-Some abstract here
+Many manipulation tasks require coordinated motions for arm and fingers. Complexity increases when the task requires to control for the force at contact against a non-flat surface; This becomes even more challenging when this contact is done on a human. All these challenges are regrouped when one, for instance, massages a human limb. When massaging, the robotic arm is required to continuously adapt its orientation and distance to the limb while the robot fingers exert desired patterns of forces and motion on the skin surface. To address these challenges, we adopt a Dynamical System (DS) approach that offers a unified motion-force control approach and enables to easily coordinate multiple degrees of freedom. As each human limb may slightly differ, we learn a model of the surface using support vector regression (SVR) which enable us to obtain a distance-to-surface mapping. The gradient of this mapping, along with the DS, generates the desired motions for the interaction with the surface. A DS-based impedance control for the robotic fingers allows to control separately for force along the normal direction of the surface while moving in the tangential plane. We validate our approach using the KUKA IIWA robotic arm and Allegro robotic hand for massaging a mannequin arm covered with a skin-like material.We show that our approach allows for 1) reactive motion planning to reach for an unknown surface, 2) following desired motion patterns on the surface, and 3) exerting desired interaction forces profiles. Our results show the effectiveness of our approach; especially the robustness toward uncertainties for shape and the given location of the surface.
+
+
 
 
 

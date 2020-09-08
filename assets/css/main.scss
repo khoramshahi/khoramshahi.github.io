@@ -127,11 +127,25 @@
     "paper-abstract";
 }
 
-.paper-title { grid-area: paper-title; }
+.paper-title { 
+  grid-area: paper-title;
+  font-size: 95%;
+  font: Arial, sans-serif;
+}
 
-.paper-authors { grid-area: paper-authors; }
+.paper-authors { 
+  grid-area: paper-authors; 
+  font-size: 75%; 
+  color: #777777;
 
-.paper-journal { grid-area: paper-journal; }
+}
+
+.paper-journal { 
+  grid-area: paper-journal; 
+  font-size: 75%; 
+  color: #777777;
+
+}
 
 .menu-container {
   // display: grid;
